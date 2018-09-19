@@ -7,6 +7,8 @@ sudo chmod 0700 /home/tts/monit/conf/monitrc;
 sudo chmod +x /home/tts/monit/monit2telegram.sh
 sudo chmod +x /home/tts/monit/sendtelegram.sh
 
+kill -9 `ps aux|grep  "monit -c /home/tts/monit/conf/monitrc"  | grep -v grep | awk '{print $2}'`
+
 if ps aux | grep "monit -c /home/tts/monit/conf/monitrc" | grep -v grep >/dev/null ; then
 	echo "monit ok";
 else
