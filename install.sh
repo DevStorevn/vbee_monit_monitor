@@ -1,6 +1,5 @@
-if ps aux | grep "monit" | grep -v grep >/dev/null ; then
-    echo monit OK ;
-else
+file="/etc/monit.conf"
+if [ ! -f "$file" ] then
     echo monit not start, I will start it;
     sudo yum install monit -y;
     sudo systemctl start monit.service
