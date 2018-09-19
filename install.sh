@@ -1,5 +1,5 @@
 sudo rm -rf  /home/tts/monit;
-sudo mv /home/tts/monit_code /home/tts/monit -R;
+sudo mv /home/tts/monit_code /home/tts/monit -r;
 sudo chmod +x /home/tts/monit/bin/monit;
 sudo chown root:root /home/tts/monit/conf/monitrc;
 sudo chmod 0700 /home/tts/monit/conf/monitrc;
