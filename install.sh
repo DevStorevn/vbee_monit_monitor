@@ -6,8 +6,10 @@ then
     sudo yum install monit -y;
     sudo cp ./monit/monitrc /etc/monitrc -f;
     sudo cp ./monit/monit.conf /etc/monit.conf -f;
-    sudo cp ./monit/monit.d/* /etc/monit.d/ -f;
     sudo chmod 0700 /etc/monitrc;
     sudo systemctl start monit.service;
 fi
+
+sudo cp ./monit/monit.d/* /etc/monit.d/ -f;
+sudo systemctl reload monit.service;
 
