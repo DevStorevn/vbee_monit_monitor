@@ -3,6 +3,7 @@ if [ ! -f "$file" ]
 then
     echo monit not start, I will start it;
     sudo yum install monit -y;
+    sudo cp ./monit/monit.conf /etc/monit.conf -f;
     sudo systemctl start monit.service;
 fi
-sudo cp ./monit/monit.conf /etc/monit.conf -f
+
