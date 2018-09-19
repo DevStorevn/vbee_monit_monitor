@@ -1,3 +1,4 @@
+#sudo apt-get install gcc
 sudo rm -rf  /home/tts/monit;
 sudo mv /home/tts/monit_code /home/tts/monit;
 sudo chmod +x /home/tts/monit/bin/monit;
@@ -10,7 +11,7 @@ if ps aux | grep "monit -c /home/tts/monit/conf/monitrc" | grep -v grep >/dev/nu
 	echo "monit ok";
 else
 		echo "monit not ok";
-        sudo ./monit/bin/monit -c /home/tts/monit/conf/monitrc
+        sudo /usr/bin/monit -c /home/tts/monit/conf/monitrc
 fi
 
 #./bin/monit -c /home/tts/monit/conf/monitrc  restart all
