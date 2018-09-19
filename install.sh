@@ -10,7 +10,7 @@ if ps aux | grep "monit -c /home/tts/monit/conf/monitrc" | grep -v grep >/dev/nu
 	echo "monit ok";
 else
 		echo "monit not ok";
-        ./home/tts/monit/bin/monit -c /home/tts/monit/conf/monitrc
+        sudo ./home/tts/monit/bin/monit -c /home/tts/monit/conf/monitrc
 fi
 
 #./bin/monit -c /home/tts/monit/conf/monitrc  restart all
