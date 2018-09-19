@@ -9,7 +9,8 @@ sudo chmod +x /home/tts/monit/sendtelegram.sh
 if ps aux | grep "monit -c /home/tts/monit/conf/monitrc" | grep -v grep >/dev/null ; then
 	echo "monit ok";
 else
-        sh /home/tts/monit/bin/monit -c /home/tts/monit/conf/monitrc
+		echo "monit not ok";
+        ./home/tts/monit/bin/monit -c /home/tts/monit/conf/monitrc
 fi
 
 #./bin/monit -c /home/tts/monit/conf/monitrc  restart all
