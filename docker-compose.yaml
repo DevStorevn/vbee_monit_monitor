@@ -8,7 +8,7 @@ services:
       net:
         ipv4_address: 10.215.8.2
     volumes:
-      - "./config/:/etc/config/"
+      - "./config/disk-tts-46.conf:/etc/config/disk-tts-46.conf"
       - "./conf/monitrc:/etc/monitrc"
       - "./monit2telegram.sh:/etc/monit2telegram.sh"
       - "./sendtelegram.sh:/etc/sendtelegram.sh"
