@@ -301,5 +301,5 @@ set httpd port 2812 and
 ## It is possible to include additional configuration parts from other files or
 ## directories.
 #
-include /home/tts/monit/config/*
+include /etc/config/*
 #

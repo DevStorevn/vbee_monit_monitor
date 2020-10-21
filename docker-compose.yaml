@@ -1,0 +1,23 @@
+version: '2'
+services:
+  monit-docker:
+    container_name: monit-docker
+    image: diogopms/monit-docker-kubernetes
+    privileged: true
+    networks:
+      net:
+        ipv4_address: 10.215.8.2
+    volumes:
+      - "./config/:/etc/config/"
+      - "./conf/monitrc:/etc/monitrc"
+      - "./monit2telegram.sh:/etc/monit2telegram.sh"
+      - "./sendtelegram.sh:/etc/sendtelegram.sh"
+      - "./telegramrc:/etc/telegramrc"
+    environment:
+      APPLICATION_ENV: Production
+networks:
+ net:
+  ipam:
+   driver: default
+   config:
+   - subnet: 10.215.8.0/24

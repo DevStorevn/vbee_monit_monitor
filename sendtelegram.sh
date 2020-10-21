@@ -7,7 +7,7 @@ function usage
     exit 1
 }
 
-VERBOSE=0
+VERBOSE=1
 
 while getopts ":c:t:i:p:m:v" opt; do
     case "$opt" in
@@ -38,7 +38,7 @@ if [ -n "$CHATID_ARG" ]; then CHATID=$CHATID_ARG; fi
 if [ -z "$TOKEN" ]; then usage "Bot token not set, it must be provided in the config file, or on the command line."; fi;
 if [ -z "$CHATID" ]; then usage "Chat ID not set, it must be provided in the config file, or on the command line."; fi;
 if [ -z "$TEXT" ]; then usage "Message not set, it must be provided on the command line."; fi;
-if [ ! -z $PARSEMODE_ARG ] && [[ "$PARSEMODE_ARG" != +(markdown|html) ]]; then usage "Parse mode must be either 'markdown' or 'html'."; fi;
+# if [ ! -z $PARSEMODE_ARG ] && [[ "$PARSEMODE_ARG" != +(markdown|html) ]]; then usage "Parse mode must be either 'markdown' or 'html'."; fi;
 
 # Sending to Telegram
 URL="https://api.telegram.org/bot$TOKEN/sendMessage"
